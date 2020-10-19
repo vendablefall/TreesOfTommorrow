@@ -87,31 +87,40 @@ members:
 </div>
 <div class='full' style='background: #f5f5f5'>
   <div class='row'>
-
-
-    <div class='large-12 columns'>
-      <h4 style='color: #999'>A note from</h4>
-      <h2>The maker</h2>
-      <div class='spacing'></div>
-
-      When I excitedly bought my first small batch of silver, my vision wasn’t to turn it into a business. It was more of a fun little science experiment. The planet had my heart and I was sure that my career was to be in conservation.<br>
-<br>
-      But it quickly became clear that designing and handcrafting beautiful pieces of jewellery inspired by what I love most, brought me a lot of joy. This joy I could then emanate, spreading more smiles and more love. So naturally, I followed this.						<br>
-<br>
-      Fast forward to present day, and here I am.<br>
-      <br>
-      I spend my days doing what I love. Sometimes this looks like pouring my heart into creating delicate pieces of silver jewellery for special people. Sometimes it looks like connecting with like-minded souls at local markets. Sometimes it looks like a day at the lake with my dear partner and Reggie (our dog/love of our life), or a walk along the river to gather inspiration. Whatever it may be, I let my heart lead. I follow my joy while always keeping my deepest held values close to my heart.<br>
-      <br>
-      I say this not to gloat, but to inspire. I believe that if we were all to pursue our soul’s unique path, we could make the world even more beautiful than it already is. It’s painfully easy to get lost in the fog of what we think we should be doing, and forget that our only job here is to find what makes us shine, and do that.<br>
-      <br>
-      So Trees of Tomorrow is my contribution. It makes me shine, it makes you shine and it makes the world shine.<br>
-      <br>
-      Thank you for being here, I truly appreciate your support.<br>
-      <br>
-      Keep shining brightly x
-      
-
+    <div class='row'>
+      <div class='large-12 columns'>
+        <h3>Our team</h3>
+        <div class='spacing'></div>
+      </div>
     </div>
+
+    {% for member in page.members %}
+    <div class='small-6 medium-3 large-4 columns'>
+      <div class='mod modTeamMember style-2'>
+        <div class='member'>
+          <img class="avatar" alt="" src="{{site.url}}/{{member.avatar}}" />
+          <div class='overlay'>
+            <ul class='socials'>
+              {% for social in member.socials %}
+                <li>
+                  <a href='{{social.url}}'>
+                    <i class='{{social.icon_class}}'></i>
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+        <h3>{{member.name}}</h3>
+        <p class='position'>{{member.position}}</p>
+        <p>{{member.desc}}</p>
+        <div class='two spacing'></div>
+      </div>
+    </div>
+  {% endfor %}
+
+
+
 
 
 
@@ -166,37 +175,37 @@ members:
   <div class='two spacing'></div>
 </div>
 <div class='full'>
+
   <div class='row'>
+   
+
+
     <div class='large-12 columns'>
-      <h3>Our team</h3>
+      <h4 style='color: #999'>A note from</h4>
+      <h2>The maker</h2>
       <div class='spacing'></div>
+
+      When I excitedly bought my first small batch of silver, my vision wasn’t to turn it into a business. It was more of a fun little science experiment. The planet had my heart and I was sure that my career was to be in conservation.<br>
+      <br>
+      But it quickly became clear that designing and handcrafting beautiful pieces of jewellery inspired by what I love most, brought me a lot of joy. This joy I could then emanate, spreading more smiles and more love. So naturally, I followed this.						<br>
+      <br>
+      Fast forward to present day, and here I am.<br>
+      <br>
+      I spend my days doing what I love. Sometimes this looks like pouring my heart into creating delicate pieces of silver jewellery for special people. Sometimes it looks like connecting with like-minded souls at local markets. Sometimes it looks like a day at the lake with my dear partner and Reggie (our dog/love of our life), or a walk along the river to gather inspiration. Whatever it may be, I let my heart lead. I follow my joy while always keeping my deepest held values close to my heart.<br>
+      <br>
+      I say this not to gloat, but to inspire. I believe that if we were all to pursue our soul’s unique path, we could make the world even more beautiful than it already is. It’s painfully easy to get lost in the fog of what we think we should be doing, and forget that our only job here is to find what makes us shine, and do that.<br>
+      <br>
+      So Trees of Tomorrow is my contribution. It makes me shine, it makes you shine and it makes the world shine.<br>
+      <br>
+      Thank you for being here, I truly appreciate your support.<br>
+      <br>
+      Keep shining brightly x
+      
+
     </div>
-  </div>
-  <div class='row'>
-    {% for member in page.members %}
-      <div class='small-6 medium-3 large-4 columns'>
-        <div class='mod modTeamMember style-2'>
-          <div class='member'>
-            <img class="avatar" alt="" src="{{site.url}}/{{member.avatar}}" />
-            <div class='overlay'>
-              <ul class='socials'>
-                {% for social in member.socials %}
-                  <li>
-                    <a href='{{social.url}}'>
-                      <i class='{{social.icon_class}}'></i>
-                    </a>
-                  </li>
-                {% endfor %}
-              </ul>
-            </div>
-          </div>
-          <h3>{{member.name}}</h3>
-          <p class='position'>{{member.position}}</p>
-          <p>{{member.desc}}</p>
-          <div class='two spacing'></div>
-        </div>
-      </div>
-    {% endfor %}
+
+
+
   </div>
   <div class='three spacing'></div>
 </div>
