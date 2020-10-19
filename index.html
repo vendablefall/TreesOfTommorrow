@@ -4,80 +4,83 @@ section_id: home
 slides:
 
   - bg: images/banner1-2344x1250.jpg
+    color: "color: #59b300"
     title:
       text: Handcrafted jewellery with a purpose
-      animation: left-to-right
-      class: large-2 large-offset-0 
-    buttons:
+      animation: bottom-to-top
+      class: large-2 
+    <!-- buttons:
       animation: left-to-right
       class: large-2 large-offset-0 
       items:
         - text: Our Purpose
           url: http://treesoftomorrow.co.nz/about
-          class: boxed
+          class: boxed -->
 
 
   - bg: images/banner2-2344x1250.jpg
+    color: "color: #59b300"
     title:
       text: Inspired by nature
       animation: bottom-to-top
-      class: large-7 large-offset-5 medium-9 medium-offset-3
-    buttons:
+      class: 
+    <!-- buttons:
       animation: bottom-to-top
       class: large-7 large-offset-5 medium-9 medium-offset-3
       items:
         - text: Purchase Now
           url: http://themeforest.net/user/honryou/portfolio?ref=honryou
-          class: boxed
+          class: boxed -->
 
   - bg: images/banner3-2344x1250.JPG
+    color: "color: #59b300"
     title:
-      text: Handcrafted jewellery with a purpose
+      text: Handmade with love
       animation: bottom-to-top
-      class: large-8 medium-11
-    buttons:
+      class: large-12 medium-11 medium-offset-0
+    <!-- buttons:
       animation: bottom-to-top
       class: medium-12
       items:
         - text: Purchase Now
           url: http://themeforest.net/user/honryou/portfolio?ref=honryou
-          class: boxed
+          class: boxed -->
       
 
 
   - bg: images/banner4-2344x1250.jpg
+    color: "color: #59b300"
     title:
-      text: Handcrafted jewellery with a purpose333
+      text: Every $10 sold plants a tree!
       animation: bottom-to-top
-    class: large-8 medium-11
+      class: large-8 medium-11 medium-offset-3
     buttons:
-      animation: bottom-to-top
-      class: medium-12
+      animation: bottom-to-top slow
+      class: large-8 medium-11 medium-offset-3
       items:
-        - text: Purchase Now
-          url: http://themeforest.net/user/honryou/portfolio?ref=honryou
+        - text: Eden Reforestation projects
+          url: https://edenprojects.org/
           class: boxed
             
   - bg: images/banner5-2344x1250.jpg
+    color: "color: #59b300"
     buttons:
       animation: bottom-to-top slow
       class: large-12
       items:
-        - text: View Features
-          url: http://themeforest.net/user/honryou/portfolio?ref=honryou
+        - text: Eden Reforestation projects
+          url: https://edenprojects.org/
           class: boxed
-        - text: Purchase Now
-          url: http://themeforest.net/user/honryou/portfolio?ref=honryou
     infos:
-      - text: "&nbsp;Creative and responsive design"
+      - text: "&nbsp;Partnered with Eden Reforestation projects"
         animation: bottom-to-top
-      - text: "&nbsp;Many helpful shortcodes"
+      - text: "&nbsp;Every $10 sold will plant a tree"
         animation: bottom-to-top
-      - text: "&nbsp;Simple but powerful theme options"
+      - text: "&nbsp;Socially concious small business"
         animation: bottom-to-top
-      - text: "&nbsp;Fully responsive"
+      - text: "&nbsp;Regenerating forests one piece at a time!"
         animation: bottom-to-top
-boxes:
+<!-- boxes:
   - icon_class: fa fa-trophy
     title: Design
     text:
@@ -97,7 +100,7 @@ boxes:
   - icon_class: fa fa-dot-circle-o
     title: Marketing
     text:
-      Placeat vel itaque perspiciatis sed repellat qui nihil recusandae doloremque aperiam necessitatibus aspernatur. illum ad adipisci saepe dolores cumque fugit nihil minus. temporibus corporis eos dolore reprehenderit ipsa at neque ab ut porro perferendis ex nihilillum ad adipisci saepe dolores cumque fugit nihil minus.
+      Placeat vel itaque perspiciatis sed repellat qui nihil recusandae doloremque aperiam necessitatibus aspernatur. illum ad adipisci saepe dolores cumque fugit nihil minus. temporibus corporis eos dolore reprehenderit ipsa at neque ab ut porro perferendis ex nihilillum ad adipisci saepe dolores cumque fugit nihil minus. -->
 <!-- milestones:
   - from: 0
     to: 69
@@ -165,7 +168,11 @@ testimonials:
               <div class='info{{forloop.index}} {{info.animation}}' style=''>
                 <div class='row'>
                   <div class='medium-10 large-8 columns'>
-                    <p class='fa fa-check' style='color: #333;'>{{info.text}}</p>
+                  {% if slide.color %}
+                    <p class='fa fa-check' style='{{slide.color}}'>{{info.text}}</p>
+                  {% else %}
+                    <p class='fa fa-check' style='color: rgb(255, 255, 255);'>{{info.text}}</p>
+                  {% endif %}
                     <div class='spacing'></div>
                   </div>
                 </div>
@@ -175,7 +182,11 @@ testimonials:
             <div class='title {{slide.title.animation}}' style='color: rgb(255, 255, 255);'>
               <div class='row'>
                 <div class='{{slide.title.class}} columns'>
-                  <h2>{{slide.title.text}}</h2>
+                  {% if slide.color %}
+                    <h2 style='{{slide.color}}'> {{slide.title.text}}</h2>
+                  {% else %}
+                    <h2>{{slide.title.text}}</h2>
+                  {% endif %}
                 </div>
               </div>
             </div>
@@ -184,8 +195,16 @@ testimonials:
             <div class='row'>
               <div class='{{slide.buttons.class}} columns'>
                 <div class='two spacing'></div>
-                {% for button in slide.buttons.items %}
-                  <a target="_blank" class='button {{button.class}}' href='{{button.url}}'>{{button.text}}</a>
+                {% for button in slide.buttons.items %}                    
+                    {% if slide.color %}
+                      <a target="_blank" class='button {{button.class}}' style='{{slide.color}}' href='{{button.url}}'>
+                        <div class='{{slide.color}}'>{{button.text}}</div>
+                      </a>
+                    {% else %}
+                      <a target="_blank" class='button {{button.class}}' href='{{button.url}}'>
+                        <div>{{button.text}}</div>
+                      </a>
+                    {% endif %}
                 {% endfor %}
               </div>
             </div>

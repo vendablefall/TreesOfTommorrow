@@ -4,63 +4,63 @@ section_id: portfolio
 works:
   - image: images/portfolio1-600x500.jpg
     title: Atlantasite
-    link_to: portfolio-item.html
-    class: graphic-design
+    link_to:
+    class: ring
     desc: Design &amp; Development
   - image: images/portfolio2-600x500.jpg
     title: Rimu
-    link_to: portfolio-item.html
-    class: web-design print
+    link_to:
+    class: earing
     desc: Design &amp; Development
   - image: images/portfolio3-600x500.jpg
     title: Lapiz lazuli
-    link_to: portfolio-item.html
-    class: brand
+    link_to:
+    class: 
     desc: Design &amp; Development
   - image: images/portfolio4-600x500.jpg
     title: Beryl
-    link_to: portfolio-item.html
-    class: development
+    link_to:
+    class: ring
     desc: Design &amp; Development
   - image: images/portfolio5-600x500.jpg
     title: Sterling silver
-    link_to: portfolio-item.html
-    class: print brand
+    link_to:
+    class: assorted
     desc: Design &amp; Development
   - image: images/portfolio6-600x500.jpg
     title: A favourite combination
-    link_to: portfolio-item.html
-    class: web-design
+    link_to:
+    class: assorted
     desc: Design &amp; Development
   - image: images/portfolio7-600x500.JPG
     title: Rimu & silver vine
-    link_to: portfolio-item.html
-    class: web-design
+    link_to:
+    class: ring
     desc: Design &amp; Development
   - image: images/portfolio8-600x500.jpg
     title: Silver cairn
-    link_to: portfolio-item.html
-    class: graphic-design
+    link_to:
+    class: earing
     desc: Design &amp; Development
   - image: images/portfolio9-600x500.jpg
     title: Balance
-    link_to: portfolio-item.html
-    class: graphic-design
+    link_to:
+    class: earing
     desc: Design &amp; Development
   - image: images/portfolio12-600x500.JPG
     title: Choose your style
-    link_to: portfolio-item.html
-    class: web-design print
+    link_to:
+    class: assorted
     desc: Design &amp; Development
   - image: images/portfolio11-600x500.JPG
     title: Picture jasper
-    link_to: portfolio-item.html
-    class: brand
+    link_to:
+    class: ring
     desc: Design &amp; Development
   - image: images/portfolio10-600x500.JPG
     title: Choose your style
-    link_to: portfolio-item.html
-    class: development
+    link_to:
+    class: assorted
     desc: Design &amp; Development
 
 ---
@@ -74,26 +74,26 @@ works:
             <a data-cat='all' href='#'>All</a>
           </li>
           <li>
-            <a data-cat='graphic-design' href='#'>Graphic Design</a>
+            <a data-cat='ring' href='#'>Rings</a>
           </li>
           <li>
-            <a data-cat='web-design' href='#'>Web Design</a>
+            <a data-cat='earing' href='#'>Earings</a>
           </li>
           <li>
-            <a data-cat='brand' href='#'>Brand</a>
+            <a data-cat='assorted' href='#'>Assorted</a>
           </li>
-          <li>
+          <!-- <li>
             <a data-cat='development' href='#'>Development</a>
           </li>
           <li>
             <a data-cat='print' href='#'>Print</a>
-          </li>
+          </li> -->
         </ul>
       </div>
       <ul class='gallery large-block-grid-4 medium-block-grid-3 seperated small-block-grid-2'>
         {% for work in page.works %}
           <li class='{{work.class}}'>
-            <a href='{{work.link_to}}'>
+            <a> <!-- <a href='{{work.link_to}}'> -->
               <img alt="" src="{{site.url}}/{{work.image}}" />
               <div class='overlay' style='background: rgba(143, 221, 115, 0.8);'>
                 <div class='thumb-info'>
@@ -111,7 +111,7 @@ works:
   <div class='row'>
     <div class='large-12 columns'>
       <p class='centered-text'>
-        <a class='button' href='#'>See more works</a>
+        <!-- <a class='button' href='#'>See more works</a> -->
       </p>
     </div>
   </div>
